@@ -32,6 +32,10 @@ class Birthday:
             self.__day = day
     # end set_day
 
+    def set_month(self, month):
+        if month >= 1 and month <= 12:
+            self.__month = month
+
     # Accessor for __month
     def get_month(self):
         return self.__month
@@ -48,6 +52,16 @@ class Birthday:
         # return # of days
         today = datetime.today()
         # COMPLETE THIS FOR YOUR ASSIGNMENT
+        current_month = today.month
+        current_day = today.day
+
+        d_t = self.day_in_year(current_month, current_day)
+        d_b = self.day_in_year(self.__month, self.__day)
+
+        if d_b > d_t:
+            return d_b - d_t
+        else:
+            return 365 + (d_b - d_t)
         
     def day_in_year(self, month, day):
         """calculates the day number within the year corresponding to a given 
