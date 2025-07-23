@@ -35,6 +35,38 @@ class Person:
     def get_last_name(self):
         """Accessor for last name"""
         return self.last_name
+    
+    def say_birthday(self):
+        result = "an unknown date"
+
+        if self._birthday is not None:
+            month_names = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ]
+
+            day = self._birthday.get_day()
+            month = month_names[self._birthday.get_month() - 1]
+
+            if day in [11, 12, 13]:
+                suffix = "th"
+            else:
+                last_digit = day % 10
+                if last_digit == 1:
+                    suffix = "st"
+                elif last_digit == 2:
+                    suffix = "nd"
+                elif last_digit == 3:
+                    suffix = "rd"
+                else:
+                    suffix = "th"
+
+            result = f"{day}{suffix} of {month}"
+
+        return result
+
+    def __lt__(self, other):
+        return self.first_name < other.first_name
 
     def __str__(self):
         """String representation for the object"""
