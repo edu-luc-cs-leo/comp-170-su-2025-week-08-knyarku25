@@ -1,0 +1,6 @@
+## Reflection
+After reviewing the posted solutions for both `SuperAles.py` and `SuperVehicles.py`, I noticed a few key differences compared to my own.
+One of the main things I overlooked was updating the derived classes after modifying the superclass. While I did focus on building a solid base class, I didn’t go back and fully refactor the subclasses to reflect those changes. The posted solutions were more consistent in applying inheritance and showed better use of `super().__init__()` in constructors.
+Another difference was how clearly the solutions were commented. My code was mostly readable, but I didn’t include enough comments to walk someone through my logic or show that I fully understood what each part was doing. The solutions included short, helpful comments that made the purpose of each method clear.
+One thing I did well was testing. I wrote a few simple test cases of my own even though they weren’t required, which helped me verify that my classes were working correctly. That seems to align with the suggestion that extra points are given for writing tests without being asked.
+Moving forward, I’ll make sure to carry any superclass changes down to the subclasses and be more intentional about adding comments that reflect my understanding of the code.
